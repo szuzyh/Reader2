@@ -57,11 +57,14 @@ public class WelcomeActivity extends Activity {
         }else {
             iv_splash.setImageResource(R.drawable.bg_welcome);
         }
-        final Animation scaleAnim= AnimationUtils.loadAnimation(this,R.anim.splash);
-//                =new ScaleAnimation(1.0f,1.2f,1.0f,1.2f
-//                , Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+       final Animation scaleAnim= AnimationUtils.loadAnimation(this,R.anim.splash);
+// final ScaleAnimation scaleAnim = new ScaleAnimation(1.0f, 1.2f, 1.0f, 1.2f,
+//                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
+//                0.5f);
 //        scaleAnim.setFillAfter(true);
 //        scaleAnim.setDuration(3000);
+
+       // final ScaleAnimation scaleAnim= (ScaleAnimation) AnimationUtils.loadAnimation(this,R.anim.splash);
         iv_splash.startAnimation(scaleAnim);
         //动画监听
         scaleAnim.setAnimationListener(new Animation.AnimationListener() {
@@ -89,13 +92,14 @@ public class WelcomeActivity extends Activity {
                                 @Override
                                 public void onSuccess(int i, Header[] headers, byte[] bytes) {
                                     saveImage(imgFile,bytes);
-                                    startMainActivity();
+                                  //  startMainActivity();
 
                                 }
 
                                 @Override
                                 public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
-                                    startMainActivity();
+                                    //startMainActivity();
+
                                 }
                             });
                         } catch (JSONException e) {
@@ -105,9 +109,16 @@ public class WelcomeActivity extends Activity {
 
                     @Override
                     public void onFailure(int i, org.apache.http.Header[] headers, byte[] bytes, Throwable throwable) {
-                     startMainActivity();
+                    // startMainActivity();
                     }
                 });
+                if (mIsLogin) {
+                    Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
                 finish();
             }
             @Override
@@ -136,18 +147,23 @@ public class WelcomeActivity extends Activity {
         }
     }
 
-    private void startMainActivity() {
+//    private void startMainActivity() {
+//
+//        if (mIsLogin){
+//            Intent intent=new Intent(WelcomeActivity.this,MainActivity.class);
+//            startActivity(intent);
+//            overridePendingTransition(android.R.anim.fade_in,
+//                    android.R.anim.fade_out);
+//            finish();
+//        }else {
+//            Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
+//            startActivity(intent);
+//            overridePendingTransition(android.R.anim.fade_in,
+//                    android.R.anim.fade_out);
+//            finish();
+//        }
+//
+//    }
 
-        if (mIsLogin){
-            Intent intent=new Intent(WelcomeActivity.this,MainActivity.class);
-            startActivity(intent);
-        }else {
-            Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
-            startActivity(intent);
-        }
-        overridePendingTransition(android.R.anim.fade_in
-                ,android.R.anim.fade_out);
-        finish();
-    }
 
 }

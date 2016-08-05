@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.ToastMsg(MainActivity.this,"Test", Toast.LENGTH_SHORT);
+                Utils.ToastMsg(MainActivity.this,"爱你们哦", Toast.LENGTH_SHORT);
             }
         });
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,mDrawerLayout,mToolbar,

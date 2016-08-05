@@ -32,7 +32,7 @@ public class ReaderApplication extends Application {
 //                .tasksProcessingOrder(QueueProcessingType.LIFO)
 //                .diskCache(new UnlimitedDiskCache(cacheDir)).writeDebugLogs()
 //                .build();
-        ImageLoaderConfiguration configuration=ImageLoaderConfiguration.createDefault(this);
+        ImageLoaderConfiguration configuration=ImageLoaderConfiguration.createDefault(context);
         ImageLoader.getInstance().init(configuration);
 
 //        ImageLoader.getInstance().init(config);

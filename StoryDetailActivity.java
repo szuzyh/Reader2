@@ -98,9 +98,11 @@ public class StoryDetailActivity extends AppCompatActivity {
                                     .cacheOnDisk(true)
                                     .build();
                             imageLoader.displayImage(mStoryDetail.getImage(),iv_story_image,options);
+
                             String css = "<link rel=\"stylesheet\" href=\"file:///android_asset/css/news.css\" type=\"text/css\">";
                             String html = "<html><head>" + css + "</head><body>" + mStoryDetail.getBody() + "</body></html>";
                             html = html.replace("<div class=\"img-place-holder\">", "");//这个删掉也无所谓吧
+                            System.out.println(html);
                             wv_story_body.loadDataWithBaseURL("x-data://base", html, "text/html", "UTF-8", null);
                         }
                     });
