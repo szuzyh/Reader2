@@ -112,14 +112,15 @@ public class WelcomeActivity extends Activity {
                     // startMainActivity();
                     }
                 });
-                if (mIsLogin) {
-                    Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
-                    startActivity(intent);
-                } else {
-                    Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                }
-                finish();
+//                if (mIsLogin) {
+//                    Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+//                    startActivity(intent);
+//                } else {
+//                    Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+//                    startActivity(intent);
+//                }
+//                finish();
+                startMainActivity();
             }
             @Override
             public void onAnimationRepeat(Animation animation) {
@@ -147,23 +148,23 @@ public class WelcomeActivity extends Activity {
         }
     }
 
-//    private void startMainActivity() {
-//
-//        if (mIsLogin){
-//            Intent intent=new Intent(WelcomeActivity.this,MainActivity.class);
-//            startActivity(intent);
-//            overridePendingTransition(android.R.anim.fade_in,
-//                    android.R.anim.fade_out);
-//            finish();
-//        }else {
-//            Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
-//            startActivity(intent);
-//            overridePendingTransition(android.R.anim.fade_in,
-//                    android.R.anim.fade_out);
-//            finish();
-//        }
-//
-//    }
+    private void startMainActivity() {
+
+        if (mIsLogin){
+            Intent intent=new Intent(WelcomeActivity.this,MainActivity.class);
+            startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+            finish();
+        }else {
+            Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
+            startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in,
+                    android.R.anim.fade_out);
+            finish();
+        }
+
+    }
 
 
 }
