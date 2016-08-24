@@ -13,13 +13,18 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
  * Created by 27721_000 on 2016/7/8.
  */
 public class ReaderApplication extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();
+
         initImageLoader(getApplicationContext());
         Stetho.initializeWithDefaults(this);
         MyHttpClient.initInstance();
     }
+
+
+
     private void initImageLoader(Context context) {
 
 //        File cacheDir= StorageUtils.getCacheDirectory(context);

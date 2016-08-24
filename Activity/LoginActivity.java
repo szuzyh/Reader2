@@ -1,4 +1,4 @@
-package com.example.reader20;
+package com.example.reader20.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.reader20.R;
 import com.example.reader20.http.MyHttpClient;
 import com.example.reader20.http.MyHttpUrl;
 import com.example.reader20.utils.SPUtils;

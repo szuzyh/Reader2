@@ -22,6 +22,8 @@ public class GsonUtils  {
         return t;
     }
 
+
+
     public static <T> List<T> getObjects(String jsonString, Class<T> cls){
         List<T> list=new ArrayList<>();
         try{

@@ -1,15 +1,18 @@
 package com.example.reader20.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by 27721_000 on 2016/7/17.
  */
-public class Latest {
+public class Latest implements Serializable{
     private String date;
     private List<StorySimple> stories;
 //    @SerializedName("top_stories")
     private List<topStory> topStories;
+
+
     public void setDate(String date) {
         this.date = date;
     }

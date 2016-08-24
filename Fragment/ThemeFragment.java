@@ -1,4 +1,4 @@
-package com.example.reader20;
+package com.example.reader20.Fragment;
 
 
 import android.content.Context;
@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.reader20.R;
+import com.example.reader20.Activity.StoryDetailActivity;
 import com.example.reader20.adapter.RecyclerViewAdapter;
 import com.example.reader20.adapter.OnItemClickListener;
 import com.example.reader20.http.MyHttpClient;

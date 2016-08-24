@@ -9,11 +9,28 @@ import java.util.List;
  * Created by 27721_000 on 2016/7/17.
  */
 public class StorySimple implements Parcelable {
-
-    private int id;
+    String date;
+    private String id;
     private List<String> images;
     private String title;
     private String multipic;
+    private int type;
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
 
     public void setTitle(String title) {
         this.title = title;
@@ -23,12 +40,12 @@ public class StorySimple implements Parcelable {
         return title;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getId() {
+        return id;
     }
 
-    public int getId() {
-        return id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setImages(List<String> images) {
@@ -62,7 +79,7 @@ public class StorySimple implements Parcelable {
     public StorySimple(){}
 
     protected StorySimple(Parcel in) {
-        this.id=in.readInt();
+        this.id=in.readString();
         this.images=in.createStringArrayList();
         this.title=in.readString();
         this.multipic=in.readString();
@@ -87,7 +104,7 @@ public class StorySimple implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.id);
+        dest.writeString(this.id);
         dest.writeStringList(this.images);
         dest.writeString(this.title);
         dest.writeString(this.multipic);

@@ -16,6 +16,21 @@ public class MyHttpUrl {
 
     public static final String DAILY_BASEURL="http://news-at.zhihu.com/api/4/news/";
     public static final String LATEST="latest";
-
     public static final String Theme_BASE="http://news-at.zhihu.com/api/4/theme/";
+    public static final int TOPIC = 131;
+    public static final String BEFORE_URL = "before/";
+    //用于分享
+    public static final String SHARE_URL = " http://daily.zhihu.com/story/";
+
+//获取新闻额外信息
+    public static final String STORY_EXTRA = "story-extra/";
+    public static final String LONG_COMMENTS = "story/news_id/long-comments";
+    public static final String SHORT_COMMENTS = "story/news_id/short-comments";
+
+
+
+
+
+
+
 }
